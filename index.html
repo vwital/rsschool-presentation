@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>KISS</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/dracula.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            Development Practices and Tools:
+            <h1>KISS (Keep It Simple, Stupid)</h1>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h3>Origin</h3>
+            <p class="fragment">
+              The acronym was reportedly coined by Kelly Johnson, lead engineer
+              at the Lockheed Skunk Works
+              <img
+                width="40%"
+                src="./assets/ClarenceLeonardKellyJohnson.jpg"
+                alt="ClarenceLeonardKellyJohnson"
+              />
+            </p>
+            <p class="fragment">
+              "Keep it simple, stupid" --> "Keep it simple stupid" (no comma)
+            </p>
+          </section>
+          <section>
+            <p class="fragment">
+              First seen partly in American English by at least 1938
+            </p>
+            <p class="fragment">First noted by the U.S. Navy in 1960</p>
+          </section>
+        </section>
+        <section>
+          <h4>Variations on the phrase</h4>
+          <p class="fragment">keep it super simple / keep it stupidly simple</p>
+          <p class="fragment">
+            keep it simple, sweetie / keep it simple, silly
+          </p>
+          <p class="fragment">
+            keep it short and simple / keep it short and sweet
+          </p>
+          <p class="fragment">
+            keep it simple, soldier / keep it simple, sailor
+          </p>
+          <p class="fragment">
+            keep it small and simple / keep it sweet and simple
+          </p>
+          <p class="fragment">keep it simple and straightforward</p>
+        </section>
+        <section>
+          <h3>KISS (Keep It Simple, Stupid)</h3>
+          <p class="fragment">
+            It’s a principle in software engineering that suggests that systems
+            work best when they are simple and easy to understand, rather than
+            complex. The idea is to make code easy to read, maintain and debug.
+          </p>
+        </section>
+        <section>
+          <h4>Solving a coding problem with the KISS principle</h4>
+          <p class="fragment">
+            1. Clearly define the problem and requirements.
+          </p>
+          <p class="fragment">
+            2. Break down the problem into smaller, manageable parts.
+          </p>
+          <p class="fragment">
+            3. Choose the simplest solution that meets the requirements.
+          </p>
+          <p class="fragment">
+            4. Write clean, readable, and well-documented code.
+          </p>
+          <p class="fragment">5. Test and debug thoroughly.</p>
+          <p class="fragment">6. Refactor and optimize as necessary.</p>
+          <p class="fragment">
+            7. Keep the code simple, modular, and maintainable.
+          </p>
+        </section>
+        <section>
+          <h3>How to Apply the KISS principle in Javascript Development?</h3>
+          <section>
+            <p class="fragment">
+              <b>Write simple, readable code</b>
+              <span
+                >(descriptive variable names, structure your code small and
+                focused, avoid using abbreviations or shortcuts)
+              </span>
+            </p>
+            <p class="fragment">
+              <b>Avoid overcomplicating things</b>
+              <span>
+                (use built-in JavaScript functions and libraries, break a big
+                problem into smaller parts, choose the simplest solution)
+              </span>
+            </p>
+          </section>
+          <section>
+            <p class="fragment">
+              <b>Keep code organized</b>
+              <span
+                >(consistent coding style, code organized into meaningful blocks
+                using functions, classes and modules.)</span
+              >
+            </p>
+            <p class="fragment">
+              <b>Use built-in functions</b>
+              <span
+                >(.forEach(), .reduce(), .filter(), .map(), ...spread,
+                destructuring(arrays, objects))</span
+              >
+            </p>
+          </section>
+          <section>
+            <p class="fragment">
+              <b>Minimize dependencies</b>
+              <span
+                >(libraries that are widely used, well-documented, and
+                maintained)</span
+              >
+            </p>
+            <p class="fragment">
+              <b>Test and debug regularly</b
+              ><span>(regular testing and debugging, automated testing )</span>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section><h2>Code Example</h2></section>
+          <section>
+            <h3>Create Simple Functions</h3>
+            <pre><code>
+				// Avoid
+			function sayHello(name) {
+				console.log('Hello', name)
+			}
+				// Use
+			const sayHello = name => console.log("Hello", name)
+			</code></pre>
+            <p class="fragment">
+              <b>Don't forget:</b>
+              <span>
+                function declaration and arrow functions have different scoping
+                methodology.</span
+              >
+            </p>
+          </section>
+          <section>
+            <h3>Implicit Return</h3>
+            <pre><code>
+					// Avoid
+				function doubleValue(value) {
+					return value * 2
+				}
+					// Use
+				const doubleValue = value => value * 2
+			</code></pre>
+          </section>
+          <section>
+            <h3>Destructuring assignment</h3>
+            <pre><code>
+				const person = {
+					first: 'Wes',
+					last: 'Bos',
+					country: 'Canada',
+					city: 'Hamilton',
+					twitter: '@wesbos'
+				  }
+				  // Avoid
+				let first = person.first
+				let last = person.last
+				// Use
+				let { first, last } = person
+			</code></pre>
+          </section>
+          <section>
+            <h3>Destructuring assignment</h3>
+            <pre><code>
+			const fruits = ['apple', 'banana', 'mango', 'pineapple', 'pear']
+
+				// Avoid
+			let fruitOne = fruits[0]
+			let fruitTwo = fruits[1]
+
+				// Use
+			let [fruitOne, fruitTwo] = fruits
+			</code></pre>
+          </section>
+          <section>
+            <h3>Spread Operator</h3>
+            <pre><code>
+			const odd = [1, 2, 3]
+				// Avoid
+			const nums = [4, 5, 6].concat(odd)
+			  // Use
+			const nums = [4, 5, 6, ...odd]
+			
+			// with Object 
+			
+			const obj1 = { a: 1, b: 2, c: 3}
+				// Use
+			const obj2 = { …obj1, d: 4 }
+			</code></pre>
+          </section>
+          <section>
+            <h3>Using Built-in Functions</h3>
+            <pre><code>
+				const list = [2, 5, 7, 2, 6, 2, 3, 5] 
+
+				// Avoid
+				for (let i = 0; i < list.length; i++) { 
+					console.log(list[i]) 
+				}
+				// Use
+				list.forEach(number => console.log(number))
+			</code></pre>
+          </section>
+          <section>
+            <h3>Using Built-in Functions</h3>
+            <pre><code>
+			let distances = [
+				{ from: 'New York', to: 'Dhaka', distance: 12654},
+				{ from: 'Sydney', to: 'chittagong', distance: 8858},
+				{ from: 'Kolkata', to: 'Sylhet', distance: 670}
+			]
+		</code></pre>
+            <pre><code>
+			  // Avoid
+			let totalInKilometers = 0
+			for(let i = 0; i < distances.length; i++){
+  			  	if(distances[i].distance < 10000){
+  			  	totalInKilometers += distances[i].distance * 0.621371
+ 				}
+			}
+			console.log(totalInKilometers)
+
+				//Use
+			let totalInKilometers = distances.filter(item => item.distance < 10000)
+								  .map(item => item.distance * 0.621371)
+								  .reduce((prev, distance) => prev + distance, 0)
+			console.log(totalInKilometers)
+			</code></pre>
+          </section>
+          <section>
+            <h3>Unnecessary complexity</h3>
+            <pre><code>
+		// Bad
+		function calculateCircleArea(radius){
+			let PI = Math.PI
+			let result = Math.PI * radius * radius
+			return result
+			}
+			
+		// Good
+		function calculateCircleArea(radius){
+			return Math.pi * radius * radius
+		}
+		// Better
+		const calculateCircleArea = (radius) => Math.PI * radius * radius
+			</code></pre>
+          </section>
+        </section>
+        <section><h2>Summary</h2></section>
+        <section><h2>Thanks!</h2></section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
